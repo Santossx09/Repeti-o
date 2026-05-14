@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Bônus de Funcionário</title>
+
+</head>
+
+<body>
+
+<h1>Calcular bônus de um funcionário</h1>
+<input type="number" id="tarefas" placeholder="Tarefas concluídas">
+
+<button onclick="calcular()">
+    Calcular
+</button>
+
+<div id="resultado"></div>
+
+<script>
+
+function calcular(){
+
+    let tarefas = Number(document.getElementById("tarefas").value);
+
+    let salario = 1200;
+
+    if(tarefas >= 10){
+
+        salario = 1200 + (1200 * 0.30);
+
+    } else if(tarefas > 5){
+
+        salario = 1200 + 100;
+
+    }
+
+    document.getElementById("resultado").innerHTML =
+        "Salário final: R$ " + salario.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
+

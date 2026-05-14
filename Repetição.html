@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repetição</title>
+</head>
+
+<body>
+
+<div class="login">
+    <h2>Login</h2>
+
+    <input type="text" id="user" placeholder="Usuário">
+    <input type="password" id="password" placeholder="Senha">
+
+    <button onclick="login()">Entrar</button>
+
+    <div id="erro"></div>
+</div>
+
+
+<script>
+
+let tentativas = 0;
+
+    function login(){
+
+        const usuario = document.getElementById("user").value;
+        const senha = document.getElementById("password").value;
+        const erro = document.getElementById("erro");
+
+        const userCorreto = "João";
+        const senhaCorreta = "Fernanda";
+ 
+
+        while(tentativas < 3){
+
+            if(usuario === userCorreto && senha === senhaCorreta){
+                erro.innerHTML = "Login realizado com sucesso!";
+                erro.style.color = "green";
+                return;
+            } 
+            else {
+                tentativas++;
+
+                erro.innerHTML = 
+                "Login incorreto! Tentativa " + tentativas + " de 3";
+                erro.style.color = "red";
+
+                if(tentativas >= 3){
+                    erro.innerHTML = 
+                    "Sistema bloqueado após 3 tentativas!";
+                }
+
+                return;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
+
